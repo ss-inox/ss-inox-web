@@ -4,8 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SS INOX | Soldadura TIG y Metalmecánica en Santo Domingo</title>
-    <!-- Conectamos nuestra hoja de estilos (la crearemos en el siguiente paso) -->
     <link rel="stylesheet" href="estilos.css">
+    <style>
+        /* Estilo del botón flotante de WhatsApp */
+        .whatsapp-flotante {
+            position: fixed;
+            bottom: 22px;
+            right: 22px;
+            background-color: #25D366;
+            color: #FFFFFF;
+            padding: 14px 20px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1rem;
+            text-decoration: none;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: transform 0.2s;
+        }
+        .whatsapp-flotante:hover {
+            transform: scale(1.05);
+            background-color: #20ba5a;
+        }
+    </style>
 </head>
 <body>
 
@@ -19,7 +43,7 @@
                 <a href="#servicios">Servicios</a>
                 <a href="#proyectos">Proyectos Reales</a>
                 <a href="#empresas">Empresas</a>
-                <a href="#cotizar" class="btn-nav">Solicitar Cotización</a>
+                <a href="https://wa.me" target="_blank" rel="noopener noreferrer" class="btn-nav">Cotizar por WhatsApp</a>
             </nav>
         </div>
     </header>
@@ -31,10 +55,10 @@
             <h1>Precisión en Acero Inoxidable, Soldadura TIG y Estructuras Metálicas</h1>
             <p>Fabricamos mobiliario sanitario, equipamiento gastronómico e industrial, estructuras, cubiertas y trabajos a medida con acabados de alta durabilidad.</p>
             <div class="hero-buttons">
-                <a href="#cotizar" class="btn-primary">Cotizar un Proyecto</a>
-                <a href="https://wa.me" target="_blank" class="btn-whatsapp">
+                <a href="https://wa.me" target="_blank" rel="noopener noreferrer" class="btn-whatsapp">
                     Escribir al WhatsApp
                 </a>
+                <a href="#proyectos" class="btn-primary">Ver Trabajos Realizados</a>
             </div>
         </div>
     </section>
@@ -121,7 +145,7 @@
                 </ul>
             </div>
             <div class="empresas-cta">
-                <a href="#cotizar" class="btn-primary">Solicitar Visita Técnica</a>
+                <a href="https://wa.me" target="_blank" rel="noopener noreferrer" class="btn-whatsapp">Solicitar Visita Técnica por WhatsApp</a>
             </div>
         </div>
     </section>
@@ -130,7 +154,7 @@
     <section id="cotizar" class="section">
         <div class="container form-container">
             <h2 class="section-title">Solicita tu Cotización</h2>
-            <p class="section-subtitle">Completa los datos y te enviaremos una proforma detallada.</p>
+            <p class="section-subtitle">Completa los datos y te atenderemos de inmediato por WhatsApp.</p>
 
             <form id="formCotizacion" class="cotizacion-form">
                 <div class="form-group">
@@ -160,7 +184,7 @@
                     <textarea id="detalles" rows="4" required placeholder="Describe lo que necesitas fabricar o reparar..."></textarea>
                 </div>
 
-                <button type="submit" class="btn-primary btn-full">Enviar Solicitud por WhatsApp</button>
+                <button type="submit" class="btn-whatsapp btn-full" style="border: none; cursor: pointer;">Enviar Solicitud Directo a WhatsApp</button>
             </form>
         </div>
     </section>
@@ -170,35 +194,3 @@
         <div class="container footer-content">
             <div>
                 <h3>SS INOX - Soldadura TIG</h3>
-                <p>Metalmecánica, acero inoxidable y estructuras metálicas.</p>
-                <p>📍 Santo Domingo de los Tsáchilas, Ecuador</p>
-            </div>
-            <div>
-                <h4>Contacto Directo</h4>
-                <p>📱 WhatsApp / Celular: 0997185331</p>
-                <p>🧾 Contamos con RUC y facturación</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 SS INOX. Todos los derechos reservados.</p>
-        </div>
-    </footer>
-
-    <!-- Conectamos nuestro archivo JavaScript (lo crearemos después del CSS) -->
-        <script>
-        document.getElementById("formCotizacion").addEventListener("submit", function(e) {
-            e.preventDefault();
-            var nombre = document.getElementById("nombre").value.trim();
-            var telefono = document.getElementById("telefono").value.trim();
-            var servicio = document.getElementById("servicio").value;
-            var detalles = document.getElementById("detalles").value.trim();
-
-            var mensaje = "Hola SS INOX, quiero cotizar: " + servicio + ". Nombre: " + nombre + ". Tel: " + telefono + ". Detalles: " + detalles;
-                        var enlace = "https://wa.me/593997185331?text=" + encodeURIComponent(mensaje);
-            window.location.href = enlace;
-        });
-    </script>
-</body>
-</html>
-
-    
