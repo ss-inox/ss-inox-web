@@ -1,0 +1,347 @@
+/* 1. VARIABLES DE COLOR OFICIALES DE SS INOX */
+:root {
+    --azul-marino: #113B6C;
+    --azul-cian: #2BA9E0;
+    --negro-texto: #1E293B;
+    --gris-fondo: #F8FAFC;
+    --blanco: #FFFFFF;
+    --verde-whatsapp: #25D366;
+}
+
+/* 2. REINICIO BÁSICO Y TIPOGRAFÍA */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    color: var(--negro-texto);
+    background-color: var(--blanco);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1150px;
+    margin: 0 auto;
+}
+
+/* 3. BARRA DE NAVEGACIÓN */
+.navbar {
+    background-color: var(--blanco);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 12px 0;
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.logo-img {
+    height: 55px;
+    width: auto;
+    border-radius: 4px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--azul-marino);
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--azul-cian);
+}
+
+.btn-nav {
+    background-color: var(--azul-cian);
+    color: var(--blanco) !important;
+    padding: 10px 18px;
+    border-radius: 6px;
+}
+
+.btn-nav:hover {
+    background-color: var(--azul-marino);
+}
+
+/* 4. PORTADA PRINCIPAL (HERO) */
+.hero {
+    background: linear-gradient(135deg, var(--azul-marino) 0%, #09213E 100%);
+    color: var(--blanco);
+    padding: 80px 0;
+    text-align: center;
+}
+
+.badge {
+    display: inline-block;
+    background-color: rgba(43, 169, 224, 0.2);
+    border: 1px solid var(--azul-cian);
+    color: var(--azul-cian);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    max-width: 850px;
+    margin: 0 auto 20px auto;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 1.15rem;
+    max-width: 700px;
+    margin: 0 auto 35px auto;
+    color: #CBD5E1;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn-primary {
+    background-color: var(--azul-cian);
+    color: var(--blanco);
+    padding: 14px 28px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #1e8ec0;
+}
+
+.btn-whatsapp {
+    background-color: var(--verde-whatsapp);
+    color: var(--blanco);
+    padding: 14px 28px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: opacity 0.3s;
+}
+
+.btn-whatsapp:hover {
+    opacity: 0.9;
+}
+
+/* 5. SECCIONES GENERALES Y TARJETAS */
+.section {
+    padding: 70px 0;
+}
+
+.bg-light {
+    background-color: var(--gris-fondo);
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--azul-marino);
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #64748B;
+    margin-bottom: 45px;
+    font-size: 1.05rem;
+}
+
+.grid-servicios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: var(--blanco);
+    padding: 28px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border-top: 4px solid var(--azul-cian);
+}
+
+.card h3 {
+    color: var(--azul-marino);
+    margin-bottom: 12px;
+    font-size: 1.2rem;
+}
+
+/* 6. GALERÍA DE PROYECTOS */
+.grid-galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.proyecto-card {
+    background: var(--blanco);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s;
+}
+
+.proyecto-card:hover {
+    transform: translateY(-5px);
+}
+
+.proyecto-card img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    display: block;
+}
+
+.proyecto-info {
+    padding: 20px;
+}
+
+.proyecto-info h3 {
+    color: var(--azul-marino);
+    margin-bottom: 8px;
+    font-size: 1.15rem;
+}
+
+.proyecto-info p {
+    font-size: 0.95rem;
+    color: #475569;
+}
+
+/* 7. SECCIÓN EMPRESAS */
+.section-dark {
+    background-color: var(--azul-marino);
+    color: var(--blanco);
+}
+
+.empresas-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.empresas-box h2 {
+    font-size: 1.9rem;
+    margin-bottom: 15px;
+}
+
+.lista-beneficios {
+    list-style: none;
+    margin-top: 15px;
+}
+
+.lista-beneficios li {
+    margin-bottom: 8px;
+    font-size: 1.05rem;
+}
+
+/* 8. FORMULARIO DE COTIZACIÓN */
+.form-container {
+    max-width: 650px;
+}
+
+.cotizacion-form {
+    background: var(--gris-fondo);
+    padding: 35px;
+    border-radius: 8px;
+    border: 1px solid #E2E8F0;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--azul-marino);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #CBD5E1;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.btn-full {
+    width: 100%;
+}
+
+/* 9. PIE DE PÁGINA (FOOTER) */
+.footer {
+    background-color: #091E36;
+    color: #CBD5E1;
+    padding-top: 50px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding-bottom: 40px;
+}
+
+.footer h3, .footer h4 {
+    color: var(--blanco);
+    margin-bottom: 12px;
+}
+
+.footer-bottom {
+    background-color: #051324;
+    text-align: center;
+    padding: 18px 0;
+    font-size: 0.9rem;
+}
+
+/* 10. ADAPTACIÓN A CELULARES */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 1.9rem;
+    }
+    .nav-content {
+        justify-content: center;
+    }
+}
