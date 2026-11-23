@@ -12,16 +12,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
             const numeroWhatsApp = "593997185331";
 
-            const texto = 
-                "Hola *SS INOX*, deseo solicitar una cotización:\n\n" +
-                "👤 *Cliente / Empresa:* " + nombre + "\n" +
-                "📱 *Teléfono:* " + telefono + "\n" +
-                "🔧 *Servicio:* " + servicio + "\n" +
-                "📝 *Detalles:* " + detalles;
+            const mensaje = "Hola SS INOX, deseo solicitar una cotizacion. " +
+                "Cliente: " + nombre + " | " +
+                "Telefono: " + telefono + " | " +
+                "Servicio: " + servicio + " | " +
+                "Detalles: " + detalles;
 
-            const urlWhatsApp = "https://whatsapp.com" + numeroWhatsApp + "&text=" + encodeURIComponent(texto);
+            const urlWhatsApp = "https://wa.me" + numeroWhatsApp + "?text=" + encodeURIComponent(mensaje);
 
-            window.location.href = urlWhatsApp;
+            window.open(urlWhatsApp, "_blank");
         });
     }
 });
