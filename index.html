@@ -32,7 +32,7 @@
             <p>Fabricamos mobiliario sanitario, equipamiento gastronómico e industrial, estructuras, cubiertas y trabajos a medida con acabados de alta durabilidad.</p>
             <div class="hero-buttons">
                 <a href="#cotizar" class="btn-primary">Cotizar un Proyecto</a>
-                <a href="https://wa.me." target="_blank" class="btn-whatsapp">
+                <a href="https://wa.me" target="_blank" class="btn-whatsapp">
                     Escribir al WhatsApp
                 </a>
             </div>
@@ -185,6 +185,20 @@
     </footer>
 
     <!-- Conectamos nuestro archivo JavaScript (lo crearemos después del CSS) -->
-    <script src="app.js"></script>
+        <script>
+        document.getElementById("formCotizacion").addEventListener("submit", function(e) {
+            e.preventDefault();
+            var nombre = document.getElementById("nombre").value.trim();
+            var telefono = document.getElementById("telefono").value.trim();
+            var servicio = document.getElementById("servicio").value;
+            var detalles = document.getElementById("detalles").value.trim();
+
+            var mensaje = "Hola SS INOX, quiero cotizar: " + servicio + ". Nombre: " + nombre + ". Tel: " + telefono + ". Detalles: " + detalles;
+                        var enlace = "https://wa.me/593997185331?text=" + encodeURIComponent(mensaje);
+            window.location.href = enlace;
+        });
+    </script>
 </body>
 </html>
+
+    
