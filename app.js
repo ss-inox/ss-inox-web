@@ -1,36 +1,27 @@
-// Esperamos a que toda la página cargue antes de ejecutar el código
 document.addEventListener("DOMContentLoaded", function () {
-    
-    // Buscamos el formulario de cotización por su ID
     const formulario = document.getElementById("formCotizacion");
 
-    // Escuchamos el evento cuando el cliente presiona el botón "Enviar Solicitud"
-    formulario.addEventListener("submit", function (evento) {
-        // Evitamos que la página se recargue sola
-        evento.preventDefault();
+    if (formulario) {
+        formulario.addEventListener("submit", function (evento) {
+            evento.preventDefault();
 
-        // 1. Capturamos lo que el cliente escribió en cada campo
-        const nombre = document.getElementById("nombre").value.trim();
-        const telefono = document.getElementById("telefono").value.trim();
-        const servicio = document.getElementById("servicio").value;
-        const detalles = document.getElementById("detalles").value.trim();
+            const nombre = document.getElementById("nombre").value.trim();
+            const telefono = document.getElementById("telefono").value.trim();
+            const servicio = document.getElementById("servicio").value;
+            const detalles = document.getElementById("detalles").value.trim();
 
-        // 2. Número de WhatsApp oficial de SS INOX (Ecuador +593)
-        const numeroWhatsApp = "593997185331";
+            const numeroWhatsApp = "593997185331";
 
-        // 3. Armamos el mensaje profesional bien ordenado
-        const mensaje = 
-            `Hola *SS INOX*, deseo solicitar una cotización:%0A%0A` +
-            `👤 *Cliente / Empresa:* ${encodeURIComponent(nombre)}%0A` +
-            `📱 *Teléfono:* ${encodeURIComponent(telefono)}%0A` +
-            `🔧 *Servicio:* ${encodeURIComponent(servicio)}%0A` +
-            `📝 *Detalles del proyecto:* ${encodeURIComponent(detalles)}`;
+            const texto = 
+                "Hola *SS INOX*, deseo solicitar una cotización:\n\n" +
+                "👤 *Cliente / Empresa:* " + nombre + "\n" +
+                "📱 *Teléfono:* " + telefono + "\n" +
+                "🔧 *Servicio:* " + servicio + "\n" +
+                "📝 *Detalles:* " + detalles;
 
-        // 4. Creamos el enlace de WhatsApp y lo abrimos en una pestaña nueva
-        const urlWhatsApp = `https://wa.me{numeroWhatsApp}?text=${mensaje}`;
-        window.open(urlWhatsApp, "_blank");
+            const urlWhatsApp = "https://whatsapp.com" + numeroWhatsApp + "&text=" + encodeURIComponent(texto);
 
-        // 5. Limpiamos el formulario después de enviarlo
-        formulario.reset();
-    });
+            window.location.href = urlWhatsApp;
+        });
+    }
 });
